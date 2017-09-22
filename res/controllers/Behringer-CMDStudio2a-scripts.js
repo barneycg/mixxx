@@ -23,7 +23,7 @@ function BehringerCMDStudio2a() {}
 
 // Shift/mode state variables.
 BehringerCMDStudio2a.delButtonState = [false,false,false,false];
-BehringerCMDStudio2a.scratchButtonState = [false,false,false,false];
+BehringerCMDStudio2a.scratchButtonState = [true,true,true,true];
 
 // Button push/release state variables.
 BehringerCMDStudio2a.pitchPushed = [[false,false,false,false], [false,false,false,false]];
@@ -64,4 +64,38 @@ BehringerCMDStudio2a.init = function () {
 BehringerCMDStudio2a.shutdown = function() {
     // Leave the deck in a properly initialised state.
     BehringerCMDStudio2a.initLEDs();
+}
+
+// Functions to deal with the wheel (i.e. scratcing and jog).
+// Why is there no (XML) support in Mixxx for this most basic of functions?
+// I suspect the vast majority of controller mappings use the same code
+// (provided in the Wiki).
+BehringerCMDStudio2a.wheelTouch = function (channel, control, value, status, group) {
+    var deck = script.deckFromGroup(group);
+    //channel = channel+1;
+    if (value > 0) {
+        // We're touching the wheel.
+        var alpha = 1.0/8;
+        var beta = alpha/32;
+        engine.scratchEnable(deck, 128, 33+1/3, alpha, beta);
+    } else {
+        // We've released the wheel.
+        engine.scratchDisable(deck);
+    }
+}
+
+BehringerCMDStudio2a.wheelTurn = function (channel, control, value, status, group) {
+    //var deck = channel+1;
+    var deck = script.deckFromGroup(group);
+    var deck_array = deck-1;
+    var newValue = value-64;
+    if (true){
+        if (engine.isScratching(deck)){
+            engine.scratchTick(deck,newValue);  // Scratch!
+        } else {
+            engine.setValue(group, "jog", newValue); // Jog.
+        }
+    } else {
+            engine.setValue(group, "jog", newValue); // Jog.
+    }
 }

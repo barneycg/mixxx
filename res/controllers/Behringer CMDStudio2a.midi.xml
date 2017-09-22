@@ -125,7 +125,7 @@
                 <key>rate</key>
                 <description>Deck A Pitch Rotary.</description>
                 <status>0xB0</status>
-				<midino>05</midino>
+				<midino>0x05</midino>
                 <options>
                     <rot64/>
                 </options>
@@ -133,7 +133,7 @@
             <control>
                 <group>[Channel1]</group>
                 <key>rate_temp_down</key>
-                <description>Pitch down A on</description>
+                <description>Pitch down A</description>
                 <status>0x90</status>
                 <midino>0x06</midino>
                 <options>
@@ -143,7 +143,7 @@
             <control>
                 <group>[Channel1]</group>
                 <key>rate_temp_down</key>
-                <description>Pitch down A off</description>
+                <description>Pitch down A release</description>
                 <status>0x80</status>
                 <midino>0x06</midino>
                 <options>
@@ -153,7 +153,7 @@
             <control>
                 <group>[Channel1]</group>
                 <key>rate_temp_up</key>
-                <description>Pitch up A on</description>
+                <description>Pitch up A</description>
                 <status>0x90</status>
                 <midino>0x07</midino>
                 <options>
@@ -163,8 +163,8 @@
             <control>
                 <group>[Channel1]</group>
                 <key>rate_temp_up</key>
-                <description>Pitch up A off</description>
-                <status>0x90</status>
+                <description>Pitch up A release</description>
+                <status>0x80</status>
                 <midino>0x07</midino>
                 <options>
                     <normal/>
@@ -212,6 +212,16 @@
             </control>
             <control>
                 <group>[Channel1]</group>
+                <key>cue_default</key>
+                <description>Cue A release</description>
+                <status>0x80</status>
+                <midino>0x01</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
                 <key>play</key>
                 <description>Play A</description>
                 <status>0x90</status>
@@ -230,27 +240,37 @@
                     <normal/>
                 </options>
             </control>
-            <!-- Deck 1 TODO
             <control>
-                <group>XXX</group>
-                <key>YYY</key>
+                <group>[Channel1]</group>
+                <key>BehringerCMDStudio2a.wheelTouch</key>
                 <description>Jog A Touch</description>
                 <status>0x90</status>
                 <midino>0x03</midino>
                 <options>
-                    <ZZZ/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
-                <group>XXX</group>
-                <key>YYY</key>
+                <group>[Channel1]</group>
+                <key>BehringerCMDStudio2a.wheelTouch</key>
+                <description>Jog A Touch release</description>
+                <status>0x80</status>
+                <midino>0x03</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BehringerCMDStudio2a.wheelTurn</key>
                 <description>Jog A</description>
                 <status>0xB0</status>
                 <midino>0x03</midino>
                 <options>
-                    <ZZZ/>
+                    <script-binding/>
                 </options>
             </control>
+            <!-- Deck 1 TODO
             <control>
                 <group>XXX</group>
                 <key>YYY</key>
@@ -388,7 +408,7 @@
                 <key>rate</key>
                 <description>Deck B Pitch Rotary.</description>
                 <status>0xB0</status>
-				<midino>35</midino>
+				<midino>0x35</midino>
                 <options>
                     <rot64/>
                 </options>
@@ -396,7 +416,7 @@
             <control>
                 <group>[Channel2]</group>
                 <key>rate_temp_down</key>
-                <description>Pitch down A on</description>
+                <description>Pitch down A</description>
                 <status>0x90</status>
                 <midino>0x36</midino>
                 <options>
@@ -406,7 +426,7 @@
             <control>
                 <group>[Channel2]</group>
                 <key>rate_temp_down</key>
-                <description>Pitch down A off</description>
+                <description>Pitch down A release</description>
                 <status>0x80</status>
                 <midino>0x36</midino>
                 <options>
@@ -416,7 +436,7 @@
             <control>
                 <group>[Channel2]</group>
                 <key>rate_temp_up</key>
-                <description>Pitch up A on</description>
+                <description>Pitch up A</description>
                 <status>0x90</status>
                 <midino>0x37</midino>
                 <options>
@@ -426,7 +446,7 @@
             <control>
                 <group>[Channel2]</group>
                 <key>rate_temp_up</key>
-                <description>Pitch up A off</description>
+                <description>Pitch up A release</description>
                 <status>0x80</status>
                 <midino>0x37</midino>
                 <options>
@@ -475,6 +495,16 @@
             </control>
             <control>
                 <group>[Channel2]</group>
+                <key>cue_default</key>
+                <description>Cue B release</description>
+                <status>0x80</status>
+                <midino>0x31</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
                 <key>play</key>
                 <description>Play B</description>
                 <status>0x90</status>
@@ -493,27 +523,37 @@
                     <normal/>
                 </options>
             </control>            
-            <!-- Deck 2 TODO
             <control>
-                <group>XXX</group>
-                <key>YYY</key>
+                <group>[Channel2]</group>
+                <key>BehringerCMDStudio2a.wheelTouch</key>
                 <description>Jog B Touch</description>
                 <status>0x90</status>
                 <midino>0x33</midino>
                 <options>
-                    <ZZZ/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
-                <group>XXX</group>
-                <key>YYY</key>
+                <group>[Channel2]</group>
+                <key>BehringerCMDStudio2a.wheelTouch</key>
+                <description>Jog B Touch release</description>
+                <status>0x80</status>
+                <midino>0x33</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BehringerCMDStudio2a.wheelTurn</key>
                 <description>Jog B</description>
                 <status>0xB0</status>
                 <midino>0x33</midino>
                 <options>
-                    <ZZZ/>
+                    <script-binding/>
                 </options>
             </control>
+            <!-- Deck 2 TODO
             <control>
                 <group>XXX</group>
                 <key>YYY</key>
@@ -635,6 +675,7 @@
                 <status>0x90</status>
                 <midino>0x02</midino>
                 <on>0x01</on>
+                <minimum>0.1</minimum>
             </output>
             <output>
                 <group>[Channel1]</group>
@@ -643,6 +684,25 @@
                 <status>0x90</status>
                 <midino>0x01</midino>
                 <on>0x01</on>
+                <minimum>0.1</minimum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>play_indicator</key>
+                <description>Deck B Play Button</description>
+                <status>0x90</status>
+                <midino>0x32</midino>
+                <on>0x01</on>
+                <minimum>0.1</minimum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>cue_indicator</key>
+                <description>Deck B Cue Button</description>
+                <status>0x90</status>
+                <midino>0x31</midino>
+                <on>0x01</on>
+                <minimum>0.1</minimum>
             </output>
         </outputs>
     </controller>
